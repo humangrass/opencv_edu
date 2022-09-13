@@ -16,7 +16,8 @@ capture = cv.VideoCapture(0)                  # включает вебку
 
 while True:
     isTrue, frame = capture.read()
-    cv.imshow('Video', frame)
+    canny = cv.Canny(frame, 100, 100)
+    cv.imshow('Video', canny)
     if cv.waitKey(20) & 0xFF==ord('d'):
         break
 
